@@ -1,0 +1,483 @@
+[
+  {
+    "common_name": "Indian Peafowl",
+    "scientific_name": "Pavo cristatus",
+    "family": "Phasianidae",
+    "order": "Galliformes",
+    "description": "A large and brightly colored pheasant species native to the Indian subcontinent, famous for the male's iridescent blue-green plumage and spectacular fan-like courtship train.",
+    "habitat": "Deciduous forests, scrub jungles, agricultural fields, and semi-arid countryside.",
+    "diet": "Omnivorous; feeds on seeds, insects, fruits, small reptiles, and amphibians.",
+    "distribution": "Widespread resident across India, Pakistan, Nepal, and Sri Lanka.",
+    "conservation_status": "Least Concern (IUCN)",
+    "interesting_facts": [
+      "The Indian Peafowl is the National Bird of India.",
+      "The male's ornamental train is formed by elongated upper-tail covert feathers, not the actual tail.",
+      "Their loud, piercing call 'may-awe' is often used as a monsoon call and predator alarm."
+    ],
+    "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c5/Peacock_Plumage.jpg/800px-Peacock_Plumage.jpg"
+  },
+  {
+    "common_name": "Asian Koel",
+    "scientific_name": "Eudynamys scolopaceus",
+    "family": "Cuculidae",
+    "order": "Cuculiformes",
+    "description": "A member of the cuckoo order known for its resonant, rising 'koo-oo' call heard extensively during spring and summer. Males are glossy black with ruby eyes; females are speckled brown.",
+    "habitat": "Woodlands, gardens, urban trees, and plantations.",
+    "diet": "Frugivorous as adults; also consumes caterpillars, insects, and small fruit.",
+    "distribution": "Common resident throughout South Asia, Southeast Asia, and southern China.",
+    "conservation_status": "Least Concern (IUCN)",
+    "interesting_facts": [
+      "They are brood parasites that predominantly lay their eggs in House Crow and Jungle Crow nests.",
+      "Unlike many parasitic cuckoos, the chicks do not aggressively eject host eggs from the nest."
+    ],
+    "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/07/Asian_koel_%28male%29.jpg/800px-Asian_koel_%28male%29.jpg"
+  },
+  {
+    "common_name": "House Crow",
+    "scientific_name": "Corvus splendens",
+    "family": "Corvidae",
+    "order": "Passeriformes",
+    "description": "A medium-sized corvid of slender build with a charcoal-black body, glossy black cap and face, and a distinct silvery-grey nape and breast collar.",
+    "habitat": "Towns, cities, villages, coastal regions, and agricultural settlements.",
+    "diet": "Highly omnivorous scavenger; eats food scraps, grains, small invertebrates, carrion, and eggs.",
+    "distribution": "Native to the Indian subcontinent; widely introduced along Indian Ocean ports.",
+    "conservation_status": "Least Concern (IUCN)",
+    "interesting_facts": [
+      "Virtually never found away from human settlements.",
+      "Known for extraordinary cognitive problem-solving, facial recognition, and communal roosting."
+    ],
+    "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a2/House_Crow_%28Corvus_splendens%29_in_Kolkata_W_IMG_3659.jpg/800px-House_Crow_%28Corvus_splendens%29_in_Kolkata_W_IMG_3659.jpg"
+  },
+  {
+    "common_name": "Common Myna",
+    "scientific_name": "Acridotheres tristis",
+    "family": "Sturnidae",
+    "order": "Passeriformes",
+    "description": "A stocky brown starling with a black hood, bright yellow bill, yellow legs, and bare yellow skin around the eyes.",
+    "habitat": "Open country, farmlands, roadside avenues, urban settlements, and gardens.",
+    "diet": "Omnivorous; insects, fruits, grains, flower nectar, and household leftovers.",
+    "distribution": "Native to tropical and subtropical South and Central Asia.",
+    "conservation_status": "Least Concern (IUCN)",
+    "interesting_facts": [
+      "Mating pairs form strong lifelong monogamous bonds.",
+      "Possesses a vast vocal repertoire of whistles, clicks, chirps, and vocal mimicry."
+    ],
+    "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e0/Common_myna_%28Acridotheres_tristis_tristis%29.jpg/800px-Common_myna_%28Acridotheres_tristis_tristis%29.jpg"
+  },
+  {
+    "common_name": "Rose-ringed Parakeet",
+    "scientific_name": "Psittacula krameri",
+    "family": "Psittaculidae",
+    "order": "Psittaciformes",
+    "description": "A vibrant lime-green parakeet with a long graduated tail and red bill. Adult males display a fine pink neck ring paired with a black chin stripe.",
+    "habitat": "Woodlands, parks, agricultural fields, orchards, and urban gardens.",
+    "diet": "Granivorous and frugivorous; seeds, nuts, berries, cultivated grains, and blossoms.",
+    "distribution": "Sub-Saharan Africa and South Asia, with feral urban colonies worldwide.",
+    "conservation_status": "Least Concern (IUCN)",
+    "interesting_facts": [
+      "Roosts communally in massive flocks numbering thousands in dense city trees.",
+      "Popularly known in Indian literature and classical folklore as the 'Tota'."
+    ],
+    "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c5/Rose-ringed_parakeet_%28Psittacula_krameri_manillensis%29_male.jpg/800px-Rose-ringed_parakeet_%28Psittacula_krameri_manillensis%29_male.jpg"
+  },
+  {
+    "common_name": "Red-vented Bulbul",
+    "scientific_name": "Pycnonotus cafer",
+    "family": "Pycnonotidae",
+    "order": "Passeriformes",
+    "description": "A brownish-black songbird with an upright crest, scalloped breast plumage, and a bright crimson-red patch under the base of the tail.",
+    "habitat": "Scrub jungles, orchards, cultivated fields, urban parks, and domestic gardens.",
+    "diet": "Fruits, berries, flower nectar, insects, and tender leaf shoots.",
+    "distribution": "Native across the entire Indian subcontinent and Sri Lanka.",
+    "conservation_status": "Least Concern (IUCN)",
+    "interesting_facts": [
+      "Highly territorial and vocal, producing cheerful, bubbly whistling songs.",
+      "Plays a vital ecological role in seed dispersal and pollination of forest plants."
+    ],
+    "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/90/Red-vented_Bulbul_%28Pycnonotus_cafer%29.jpg/800px-Red-vented_Bulbul_%28Pycnonotus_cafer%29.jpg"
+  },
+  {
+    "common_name": "Red-whiskered Bulbul",
+    "scientific_name": "Pycnonotus jocosus",
+    "family": "Pycnonotidae",
+    "order": "Passeriformes",
+    "description": "Easily identified by its tall pointed crest, red patch behind each eye, white cheeks, red vent, and loud three-note musical call.",
+    "habitat": "Hill forest clearings, scrublands, plantations, gardens, and wooded valleys.",
+    "diet": "Berries, small fruits, insects, and flower nectar.",
+    "distribution": "Native to tropical Asia, common across southern and eastern India.",
+    "conservation_status": "Least Concern (IUCN)",
+    "interesting_facts": [
+      "Its song resembles a brisk and lively 'kink-a-joo' whistling phrase.",
+      "Often nests close to human dwellings, in ornamental garden hedges."
+    ],
+    "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4b/Red-whiskered_Bulbul_%28Pycnonotus_jocosus%29_in_Kolkata_W_IMG_4111.jpg/800px-Red-whiskered_Bulbul_%28Pycnonotus_jocosus%29_in_Kolkata_W_IMG_4111.jpg"
+  },
+  {
+    "common_name": "Indian Robin",
+    "scientific_name": "Copsychus fulicatus",
+    "family": "Muscicapidae",
+    "order": "Passeriformes",
+    "description": "A dimorphic chat: males are glossy black with a white shoulder stripe and chestnut-red vent; females are smoky brown with a paler chestnut vent.",
+    "habitat": "Stony scrublands, open dry deciduous woodlands, railway tracks, and rural edges.",
+    "diet": "Invertebrates, beetles, termites, ants, and spiders.",
+    "distribution": "Endemic to South Asia (India, Pakistan, Nepal, Sri Lanka).",
+    "conservation_status": "Least Concern (IUCN)",
+    "interesting_facts": [
+      "Characteristically cocks its tail straight up over its back while foraging on the ground.",
+      "Often perches atop rocks, fence posts, and low bushes to deliver short chirping songs."
+    ],
+    "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/47/Indian_Robin_%28Saxicoloides_fulicatus%29_at_Hodal_W_IMG_1227.jpg/800px-Indian_Robin_%28Saxicoloides_fulicatus%29_at_Hodal_W_IMG_1227.jpg"
+  },
+  {
+    "common_name": "Oriental Magpie-Robin",
+    "scientific_name": "Copsychus saularis",
+    "family": "Muscicapidae",
+    "order": "Passeriformes",
+    "description": "A striking black-and-white songbird with a pied pattern, white belly, white wingbars, and a long tail held erect.",
+    "habitat": "Gardens, open deciduous forests, urban parks, mangrove margins, and orchards.",
+    "diet": "Insects, earthworms, caterpillars, grasshoppers, and occasionally flower nectar.",
+    "distribution": "Native to South and Southeast Asia.",
+    "conservation_status": "Least Concern (IUCN)",
+    "interesting_facts": [
+      "Celebrated as one of Asia's finest dawn-chorus singers, delivering rich melodic tunes.",
+      "It is the National Bird of Bangladesh."
+    ],
+    "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/69/Oriental_magpie-robin_%28Copsychus_saularis%29_male.jpg/800px-Oriental_magpie-robin_%28Copsychus_saularis%29_male.jpg"
+  },
+  {
+    "common_name": "Greater Coucal",
+    "scientific_name": "Centropus sinensis",
+    "family": "Cuculidae",
+    "order": "Cuculiformes",
+    "description": "A large non-parasitic cuckoo with a glossy purple-black body, bright chestnut-rufous wings, ruby-red eyes, and a long heavy tail.",
+    "habitat": "Dense scrub, hedges, tall grassland marshes, forest edges, and rural backyards.",
+    "diet": "Insects, snails, lizards, frogs, small snakes, and bird eggs.",
+    "distribution": "Widespread across the Indian subcontinent and Southeast Asia.",
+    "conservation_status": "Least Concern (IUCN)",
+    "interesting_facts": [
+      "Also known as the Crow Pheasant; builds its own deep domed cup nest of twigs.",
+      "Produces a deep booming resonant call 'coop-coop-coop' that carries across fields."
+    ],
+    "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/36/Greater_Coucal_%28Centropus_sinensis%29_in_Kolkata_W_IMG_3655.jpg/800px-Greater_Coucal_%28Centropus_sinensis%29_in_Kolkata_W_IMG_3655.jpg"
+  },
+  {
+    "common_name": "Black Drongo",
+    "scientific_name": "Dicrurus macrocercus",
+    "family": "Dicruridae",
+    "order": "Passeriformes",
+    "description": "An all-black passerine with a distinctive forked tail, sleek plumage, and a fierce, bold territorial temperament.",
+    "habitat": "Open agricultural fields, roadside telephone lines, pastures, and light woods.",
+    "diet": "Mainly flying insects like dragonflies, moths, beetles, and termites caught on the wing.",
+    "distribution": "Widespread resident across South and East Asia.",
+    "conservation_status": "Least Concern (IUCN)",
+    "interesting_facts": [
+      "Nicknamed the 'King Crow' for its fearless habit of mobbing larger birds like hawks and eagles.",
+      "Often rides on the backs of grazing cattle to snap up disturbed grasshoppers."
+    ],
+    "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/05/Black_Drongo_%28Dicrurus_macrocercus%29_in_Kolkata_W_IMG_3658.jpg/800px-Black_Drongo_%28Dicrurus_macrocercus%29_in_Kolkata_W_IMG_3658.jpg"
+  },
+  {
+    "common_name": "White-throated Kingfisher",
+    "scientific_name": "Halcyon smyrnensis",
+    "family": "Alcedinidae",
+    "order": "Coraciiformes",
+    "description": "A large tree kingfisher with a bright turquoise-blue back and wings, chocolate-brown head and flanks, bright white throat and breast, and heavy red bill.",
+    "habitat": "Farmlands, open woodlands, irrigation canals, village ponds, and roadside wires.",
+    "diet": "Lizards, crustaceans, small rodents, large insects, frogs, and fish.",
+    "distribution": "From the eastern Mediterranean through South Asia and Southeast Asia.",
+    "conservation_status": "Least Concern (IUCN)",
+    "interesting_facts": [
+      "Does not rely exclusively on water; frequently hunts far from rivers in agricultural fields.",
+      "Emits a loud, ringing chattering laugh from exposed tree perches."
+    ],
+    "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/23/White-throated_kingfisher_%28Halcyon_smyrnensis%29.jpg/800px-White-throated_kingfisher_%28Halcyon_smyrnensis%29.jpg"
+  },
+  {
+    "common_name": "Common Kingfisher",
+    "scientific_name": "Alcedo atthis",
+    "family": "Alcedinidae",
+    "order": "Coraciiformes",
+    "description": "A sparrow-sized kingfisher with radiant metallic cyan-blue upperparts, vibrant orange underparts, a short tail, and long dagger-like bill.",
+    "habitat": "Clear, slow-flowing rivers, streams, lakes, ponds, and mangrove creeks.",
+    "diet": "Specializes in small freshwater fish, water beetles, and aquatic dragonfly nymphs.",
+    "distribution": "Eurasia and North Africa, resident across the Indian subcontinent.",
+    "conservation_status": "Least Concern (IUCN)",
+    "interesting_facts": [
+      "Dives with eyelids covered by a transparent nictitating membrane to spot prey underwater.",
+      "Can consume up to its own body weight in fish each day."
+    ],
+    "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/cc/Common_Kingfisher_Alcedo_atthis.jpg/800px-Common_Kingfisher_Alcedo_atthis.jpg"
+  },
+  {
+    "common_name": "Spotted Dove",
+    "scientific_name": "Spilopelia chinensis",
+    "family": "Columbidae",
+    "order": "Columbiformes",
+    "description": "A slender dove with a warm rosy-brown breast, greyish head, and a conspicuous white-spotted black chessboard patch on the nape.",
+    "habitat": "Open dry woodlands, gardens, cultivated fields, urban fringes, and scrub.",
+    "diet": "Grains, grass seeds, fallen seeds, and small cultivated crops.",
+    "distribution": "Native to the Indian subcontinent and Southeast Asia; introduced elsewhere.",
+    "conservation_status": "Least Concern (IUCN)",
+    "interesting_facts": [
+      "Produces a gentle, rhythmic cooing call: 'kroo-kruk-kroo... kroo-kroo'.",
+      "Performs a dramatic courtship display flight with steep climbing and clapping wings."
+    ],
+    "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e0/Spotted_Dove_%28Spilopelia_chinensis%29_in_Kolkata_W_IMG_3660.jpg/800px-Spotted_Dove_%28Spilopelia_chinensis%29_in_Kolkata_W_IMG_3660.jpg"
+  },
+  {
+    "common_name": "Rock Pigeon",
+    "scientific_name": "Columba livia",
+    "family": "Columbidae",
+    "order": "Columbiformes",
+    "description": "A stout dove with blue-grey plumage, twin black wing bars, iridescent purple and emerald neck feathers, and reddish feet.",
+    "habitat": "Cliffs, historic monuments, railway stations, bridges, and city buildings.",
+    "diet": "Seeds, cereal grains, human food waste, and green vegetation.",
+    "distribution": "Worldwide cosmopolitan distribution; abundant across South Asia.",
+    "conservation_status": "Least Concern (IUCN)",
+    "interesting_facts": [
+      "Possesses magnetoreception allowing extraordinary homing navigation abilities over hundreds of miles.",
+      "Both parents feed their squabs with nutrient-dense crop milk."
+    ],
+    "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4d/Rock_Pigeon_Columba_livia.jpg/800px-Rock_Pigeon_Columba_livia.jpg"
+  },
+  {
+    "common_name": "House Sparrow",
+    "scientific_name": "Passer domesticus",
+    "family": "Passeridae",
+    "order": "Passeriformes",
+    "description": "A small, sturdy songbird: males have patterned grey and brown backs, grey crown, and a black bib; females are sandy buff-brown overall.",
+    "habitat": "Human settlements, agricultural homesteads, town centers, and grain markets.",
+    "diet": "Grains, weed seeds, cultivated crops, insects, and breadcrumbs.",
+    "distribution": "Native to Eurasia and North Africa, introduced globally.",
+    "conservation_status": "Least Concern (IUCN)",
+    "interesting_facts": [
+      "Strongly associated with rural tiled roofs and traditional grain storage in India.",
+      "World Sparrow Day is celebrated annually on March 20 to raise conservation awareness."
+    ],
+    "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6e/Passer_domesticus_male_15.jpg/800px-Passer_domesticus_male_15.jpg"
+  },
+  {
+    "common_name": "Indian Pond Heron",
+    "scientific_name": "Ardeola grayii",
+    "family": "Ardeidae",
+    "order": "Pelecaniformes",
+    "description": "A small stocky heron appearing dull streaky brown and camouflaged when standing, but transforming into gleaming white when taking flight due to snowy wings.",
+    "habitat": "Paddy fields, marshes, village ponds, roadside ditches, and riverbanks.",
+    "diet": "Frogs, small fish, aquatic insects, dragonflies, and crustaceans.",
+    "distribution": "Indian subcontinent, Myanmar, Sri Lanka, and western Iran.",
+    "conservation_status": "Least Concern (IUCN)",
+    "interesting_facts": [
+      "Popularly known in Hindi as 'Andha Bagula' (Blind Heron) because it stands motionless until stepped upon.",
+      "During breeding season, adults develop rich maroon mantle feathers and long white head plumes."
+    ],
+    "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/05/Indian_Pond_Heron_%28Ardeola_grayii%29_in_Kolkata_W_IMG_3662.jpg/800px-Indian_Pond_Heron_%28Ardeola_grayii%29_in_Kolkata_W_IMG_3662.jpg"
+  },
+  {
+    "common_name": "Cattle Egret",
+    "scientific_name": "Bubulcus ibis",
+    "family": "Ardeidae",
+    "order": "Pelecaniformes",
+    "description": "A compact white heron with a short thick yellow bill and dark legs, acquiring rich orange-buff plumes on the crown, chest, and back during breeding season.",
+    "habitat": "Open grasslands, agricultural fields, wetlands, and pastures alongside grazing herds.",
+    "diet": "Grasshoppers, crickets, flies, beetles, ticks, and small amphibians.",
+    "distribution": "Cosmopolitan across warm temperate and tropical zones.",
+    "conservation_status": "Least Concern (IUCN)",
+    "interesting_facts": [
+      "Maintains a mutualistic relationship with livestock, feeding on insects stirred up by their footsteps.",
+      "Has expanded its global range faster than almost any other wading bird."
+    ],
+    "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/29/Cattle_egret_%28Bubulcus_ibis%29_in_Kolkata_W_IMG_3663.jpg/800px-Cattle_egret_%28Bubulcus_ibis%29_in_Kolkata_W_IMG_3663.jpg"
+  },
+  {
+    "common_name": "Little Egret",
+    "scientific_name": "Egretta garzetta",
+    "family": "Ardeidae",
+    "order": "Pelecaniformes",
+    "description": "A graceful pure white wading bird with an all-black bill, long black legs, and contrasting bright yellow feet ('golden slippers').",
+    "habitat": "Lakes, estuaries, coastal mudflats, rice fields, and shallow riverbeds.",
+    "diet": "Small fish, frogs, worms, crustaceans, and aquatic larvae.",
+    "distribution": "Widespread across southern Europe, Africa, Asia, and Australasia.",
+    "conservation_status": "Least Concern (IUCN)",
+    "interesting_facts": [
+      "Shuffles its bright yellow feet in shallow silt to flush out hidden fish.",
+      "Once heavily hunted for its delicate breeding plumes used in Victorian women's hats."
+    ],
+    "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/87/Little_egret_%28Egretta_garzetta%29.jpg/800px-Little_egret_%28Egretta_garzetta%29.jpg"
+  },
+  {
+    "common_name": "Purple Sunbird",
+    "scientific_name": "Cinnyris asiaticus",
+    "family": "Nectariniidae",
+    "order": "Passeriformes",
+    "description": "A diminutive nectar feeder with a down-curved bill. Breeding males are glossy metallic dark purple-black; females and eclipse males are olive-brown with yellow undersides.",
+    "habitat": "Gardens, scrub forests, flowering deciduous woodlands, and agricultural orchards.",
+    "diet": "Flower nectar, spiders, small insects, and fruit juice.",
+    "distribution": "South Asia, parts of Southeast Asia, and the Arabian Peninsula.",
+    "conservation_status": "Least Concern (IUCN)",
+    "interesting_facts": [
+      "Can hover briefly in front of floral blossoms like a miniature hummingbird while sipping nectar.",
+      "Builds an intricate hanging pouch nest made of cobwebs, lichen, and bark."
+    ],
+    "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4e/Purple_sunbird_%28Cinnyris_asiaticus%29_male.jpg/800px-Purple_sunbird_%28Cinnyris_asiaticus%29_male.jpg"
+  },
+  {
+    "common_name": "Common Tailorbird",
+    "scientific_name": "Orthotomus sutorius",
+    "family": "Cisticolidae",
+    "order": "Passeriformes",
+    "description": "An active, tiny warbler with bright olive-green upperparts, creamy-white underparts, a rufous-chestnut cap, and an upright cocked tail.",
+    "habitat": "Urban gardens, hedgerows, scrub jungles, plantations, and deciduous thickets.",
+    "diet": "Tiny insects, caterpillars, beetles, bugs, and flower nectar.",
+    "distribution": "Throughout the Indian subcontinent and Southeast Asia.",
+    "conservation_status": "Least Concern (IUCN)",
+    "interesting_facts": [
+      "Famous as 'Darzee' in Rudyard Kipling's The Jungle Book.",
+      "Stitches large living tree leaves together using plant fibers and cobwebs to form a cradled nest pocket."
+    ],
+    "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/44/Common_Tailorbird_%28Orthotomus_sutorius%29_in_Kolkata_W_IMG_3664.jpg/800px-Common_Tailorbird_%28Orthotomus_sutorius%29_in_Kolkata_W_IMG_3664.jpg"
+  },
+  {
+    "common_name": "Eurasian Golden Oriole",
+    "scientific_name": "Oriolus oriolus",
+    "family": "Oriolidae",
+    "order": "Passeriformes",
+    "description": "A dazzling songbird: males are striking golden-yellow with contrasting jet-black wings and tail; females and juveniles are dull greenish-yellow.",
+    "habitat": "Canopy of deciduous forests, riverine river woods, plantations, and large urban gardens.",
+    "diet": "Insects, caterpillars, berries, figs, and cherries.",
+    "distribution": "Breeds in Eurasia, winters or passes through parts of South Asia and Africa.",
+    "conservation_status": "Least Concern (IUCN)",
+    "interesting_facts": [
+      "Possesses a clear, flute-like whistling song described as 'weela-wee-ooo'.",
+      "Despite its bright yellow colors, it blends remarkably well into the sunlit forest canopy."
+    ],
+    "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5e/Eurasian_golden_oriole_%28Oriolus_oriolus%29_male.jpg/800px-Eurasian_golden_oriole_%28Oriolus_oriolus%29_male.jpg"
+  },
+  {
+    "common_name": "Indian Grey Hornbill",
+    "scientific_name": "Ocyceros birostris",
+    "family": "Bucerotidae",
+    "order": "Bucerotiformes",
+    "description": "A medium-sized hornbill with brownish-grey plumage, pale underparts, and an arched blackish bill topped with a pointed casque.",
+    "habitat": "Deciduous woodlands, large roadside banyan and peepal trees, and urban parks.",
+    "diet": "Mainly wild figs, berries, and fruits, plus insects and small lizards.",
+    "distribution": "Endemic to the Indian subcontinent.",
+    "conservation_status": "Least Concern (IUCN)",
+    "interesting_facts": [
+      "The female seals herself inside a tree hollow with mud during incubation, leaving only a feeding slit.",
+      "Essential keystone seed dispersers for major fig species (Ficus religiosa and Ficus benghalensis)."
+    ],
+    "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1a/Indian_Grey_Hornbill_Ocyceros_birostris.jpg/800px-Indian_Grey_Hornbill_Ocyceros_birostris.jpg"
+  },
+  {
+    "common_name": "Brahminy Kite",
+    "scientific_name": "Haliastur indus",
+    "family": "Accipitridae",
+    "order": "Accipitriformes",
+    "description": "A medium raptor with rich chestnut-rufous body and wings contrasting with a gleaming white head, neck, and breast, and yellow talons.",
+    "habitat": "Coastal wetlands, tidal estuaries, fishing harbors, rivers, and mangrove creeks.",
+    "diet": "Dead fish, small crabs, water snakes, frogs, and scraps stolen from other birds.",
+    "distribution": "Indian subcontinent, Southeast Asia, and Australasia.",
+    "conservation_status": "Least Concern (IUCN)",
+    "interesting_facts": [
+      "Considered the contemporary representation of the mythical bird 'Garuda' in Hindu traditions.",
+      "A skilled aerial kleptoparasite that harasses other birds mid-air to drop their prey."
+    ],
+    "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/52/Brahminy_Kite_%28Haliastur_indus%29.jpg/800px-Brahminy_Kite_%28Haliastur_indus%29.jpg"
+  },
+  {
+    "common_name": "Black Kite",
+    "scientific_name": "Milvus migrans",
+    "family": "Accipitridae",
+    "order": "Accipitriformes",
+    "description": "A buoyant, opportunistic raptor with dark brown plumage, angled wings, and a distinct shallow-forked rudder-like tail.",
+    "habitat": "Cities, municipal dumps, abattoirs, open countryside, riverbanks, and coastlines.",
+    "diet": "Carrion, household refuse, discarded fish, rodents, and small birds.",
+    "distribution": "Widespread across Europe, Africa, Asia, and Australia; ubiquitous in Indian skies.",
+    "conservation_status": "Least Concern (IUCN)",
+    "interesting_facts": [
+      "Can soar effortlessly for hours using city thermal updrafts without flapping.",
+      "Known for lightning-fast aerial swoops to snatch food directly from human hands or plates."
+    ],
+    "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c5/Black_Kite_%28Milvus_migrans%29_in_Kolkata_W_IMG_3665.jpg/800px-Black_Kite_%28Milvus_migrans%29_in_Kolkata_W_IMG_3665.jpg"
+  },
+  {
+    "common_name": "Shikra",
+    "scientific_name": "Accipiter badius",
+    "family": "Accipitridae",
+    "order": "Accipitriformes",
+    "description": "A small woodland goshawk with pale blue-grey upperparts, fine rufous-brown barring on whitish underparts, and ruby-red eyes in adult males.",
+    "habitat": "Open deciduous forest, groves, agricultural tree belts, plantations, and parks.",
+    "diet": "Lizards, squirrels, mice, small passerine birds, and large insects.",
+    "distribution": "Sub-Saharan Africa, South Asia, and Southeast Asia.",
+    "conservation_status": "Least Concern (IUCN)",
+    "interesting_facts": [
+      "A swift ambush predator that hunts from a concealed leafy branch.",
+      "Historically prized in falconry across the Indian subcontinent for its agility and courage."
+    ],
+    "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a2/Shikra_%28Accipiter_badius%29_in_Kolkata_W_IMG_3666.jpg/800px-Shikra_%28Accipiter_badius%29_in_Kolkata_W_IMG_3666.jpg"
+  },
+  {
+    "common_name": "Common Hawk-Cuckoo",
+    "scientific_name": "Hierococcyx varius",
+    "family": "Cuculidae",
+    "order": "Cuculiformes",
+    "description": "A medium cuckoo whose plumage closely mimics the Shikra hawk with barred underparts, yellow eye-rings, and grey upperparts.",
+    "habitat": "Deciduous forests, river valleys, orchards, and heavily wooded gardens.",
+    "diet": "Hairy caterpillars, beetles, bugs, and wild fruit.",
+    "distribution": "Endemic to the Indian subcontinent.",
+    "conservation_status": "Least Concern (IUCN)",
+    "interesting_facts": [
+      "Colloquially known as the 'Brainfever bird' for its persistent, shrill three-note call that repeats day and night.",
+      "Its close mimicry of the predatory Shikra allows it to alarm and displace babbler hosts when laying eggs."
+    ],
+    "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d5/Common_hawk-cuckoo_%28Hierococcyx_varius%29.jpg/800px-Common_hawk-cuckoo_%28Hierococcyx_varius%29.jpg"
+  },
+  {
+    "common_name": "Asian Palm Swift",
+    "scientific_name": "Cypsiurus balasiensis",
+    "family": "Apodidae",
+    "order": "Apodiformes",
+    "description": "A tiny, uniformly greyish-brown swift with long swept-back crescent wings and a deeply forked slender tail.",
+    "habitat": "Open lowlands, villages, and farmland with abundant palmyra or coconut palm trees.",
+    "diet": "Tiny aerial flying insects caught continuously in high-speed flight.",
+    "distribution": "Indian subcontinent, Sri Lanka, and Southeast Asia.",
+    "conservation_status": "Least Concern (IUCN)",
+    "interesting_facts": [
+      "Its entire lifecycle is tied to palm fronds; it glues its miniature nest to the underside of palm leaves using sticky saliva.",
+      "Its feet are so reduced it cannot perch on branches, only cling vertically to foliage."
+    ],
+    "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4c/Asian_palm_swift_%28Cypsiurus_balasiensis%29.jpg/800px-Asian_palm_swift_%28Cypsiurus_balasiensis%29.jpg"
+  },
+  {
+    "common_name": "Barn Owl",
+    "scientific_name": "Tyto alba",
+    "family": "Tytonidae",
+    "order": "Strigiformes",
+    "description": "A ghostly pale nocturnal raptor with a distinctive heart-shaped white facial disc, golden-buff and grey mottled back, and snowy underparts.",
+    "habitat": "Agricultural barnyards, historic ruins, temple towers, and dry scrub country.",
+    "diet": "Rats, mice, voles, shrews, and small birds.",
+    "distribution": "Worldwide across all continents except Antarctica.",
+    "conservation_status": "Least Concern (IUCN)",
+    "interesting_facts": [
+      "Possesses asymmetric ear placement enabling pinpoint three-dimensional acoustic tracking in total darkness.",
+      "Feather fringes have microscopic velvety serrations that eliminate flight noise for silent hunting."
+    ],
+    "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c3/Tyto_alba_-British_Wildlife_Centre-4.jpg/800px-Tyto_alba_-British_Wildlife_Centre-4.jpg"
+  },
+  {
+    "common_name": "Indian Scops Owl",
+    "scientific_name": "Otus bakkamoena",
+    "family": "Strigidae",
+    "order": "Strigiformes",
+    "description": "A small nocturnal owl with prominent feathered ear-tufts, finely vermiculated grey-brown bark-like plumage, and dark brown eyes.",
+    "habitat": "Deciduous woodlands, groves, overgrown village orchards, and mature suburban gardens.",
+    "diet": "Beetles, moths, grasshoppers, spiders, and occasionally small geckos.",
+    "distribution": "Resident across India, Pakistan, Nepal, and Sri Lanka.",
+    "conservation_status": "Least Concern (IUCN)",
+    "interesting_facts": [
+      "Emits a distinct single-note resonant frog-like hoot: 'what?' repeated at regular multi-second intervals.",
+      "Its plumage mimics tree bark so perfectly that it becomes nearly invisible when roosting against a trunk."
+    ],
+    "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a2/Indian_scops_owl_%28Otus_bakkamoena%29.jpg/800px-Indian_scops_owl_%28Otus_bakkamoena%29.jpg"
+  }
+]
