@@ -25,6 +25,9 @@ class Settings(BaseSettings):
     # Security & CORS
     FRONTEND_ORIGIN: str = "http://localhost:5173"
 
+    # Gemini API Configuration
+    GEMINI_API_KEY: str = ""
+
     # Base paths
     BASE_DIR: Path = Path(__file__).resolve().parent.parent
     TMP_UPLOADS_DIR: Path = Path(__file__).resolve().parent.parent / "tmp_uploads"

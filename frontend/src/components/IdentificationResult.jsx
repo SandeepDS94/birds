@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import {
   Sparkles,
   Volume2,
@@ -10,7 +10,23 @@ import {
   Layers,
   Activity,
   CheckCircle,
+  Loader2,
+  RefreshCw,
+  Image as ImageIcon,
 } from 'lucide-react';
+import { api } from '../services/api';
+
+const getBirdImageUrl = (info, sciName) => {
+  if (info?.image_url && (info.image_url.startsWith('/images/') || info.image_url.startsWith('http'))) {
+    return info.image_url;
+  }
+  const name = sciName || info?.scientific_name;
+  if (name) {
+    const slug = name.toLowerCase().trim().replace(/[\s-]+/g, '_');
+    return `/images/birds/${slug}.jpg`;
+  }
+  return info?.image_url || null;
+};
 
 export default function IdentificationResult({ result, onReset }) {
   if (!result) return null;
@@ -30,6 +46,38 @@ export default function IdentificationResult({ result, onReset }) {
 
   const isLowConfidence = status === 'low_confidence' || status === 'no_detection';
   const confidencePercent = Math.round((confidence || 0) * 100);
+
+  // Image generation states
+  const [generatedImage, setGeneratedImage] = useState(null);
+  const [imageMeta, setImageMeta] = useState(null);
+  const [isGenerating, setIsGenerating] = useState(false);
+  const [genError, setGenError] = useState(null);
+
+  // Determine current image URL
+  const defaultCatalogImg = bird_info?.in_database ? getBirdImageUrl(bird_info, scientific_name) : null;
+  const currentImageUrl = generatedImage || bird_info?.image_url || defaultCatalogImg;
+
+  const handleGenerateImage = async () => {
+    if (!bird_name && !scientific_name) return;
+    setIsGenerating(true);
+    setGenError(null);
+    try {
+      const res = await api.generateBirdImage({
+        commonName: bird_name || scientific_name,
+        scientificName: scientific_name,
+      });
+      if (res?.success && res?.data?.image_url) {
+        setGeneratedImage(res.data.image_url);
+        setImageMeta(res.data);
+      } else {
+        setGenError(res?.message || 'Failed to generate visual');
+      }
+    } catch (err) {
+      setGenError(err.message || 'Error communicating with visual generation service');
+    } finally {
+      setIsGenerating(false);
+    }
+  };
 
   return (
     <div style={{ maxWidth: '860px', margin: '0 auto' }}>
@@ -110,31 +158,162 @@ export default function IdentificationResult({ result, onReset }) {
         )}
       </div>
 
-      {/* Main Grid: Photo & Ecological Info */}
-      {bird_info && bird_info.in_database && (
+      {/* Main Grid: Photo & Ecological Info (shown for all identified birds) */}
+      {(bird_name || scientific_name) && status !== 'no_detection' && (
         <div className="card" style={{ padding: '2rem', marginBottom: '2rem' }}>
-          <div style={{ display: 'grid', gridTemplateColumns: bird_info.image_url ? '1fr 1.3fr' : '1fr', gap: '2rem', alignItems: 'center' }}>
-            {bird_info.image_url && (
-              <div style={{ borderRadius: 'var(--radius-lg)', overflow: 'hidden', height: '260px', boxShadow: 'var(--glass-shadow)' }}>
-                <img
-                  src={bird_info.image_url}
-                  alt={bird_name}
-                  style={{ width: '100%', height: '100%', objectFit: 'cover' }}
-                />
-              </div>
-            )}
+          <div style={{ display: 'grid', gridTemplateColumns: '1fr 1.3fr', gap: '2rem', alignItems: 'center' }}>
+            {/* Image / Visual Column */}
+            <div>
+              {currentImageUrl ? (
+                <div>
+                  <div
+                    style={{
+                      borderRadius: 'var(--radius-lg)',
+                      overflow: 'hidden',
+                      height: '260px',
+                      boxShadow: 'var(--glass-shadow)',
+                      background: '#e2e8f0',
+                      position: 'relative',
+                    }}
+                  >
+                    <img
+                      src={currentImageUrl}
+                      alt={bird_name}
+                      style={{ width: '100%', height: '100%', objectFit: 'cover' }}
+                      onError={(e) => {
+                        const slug = (scientific_name || bird_info?.scientific_name)
+                          ?.toLowerCase()
+                          .trim()
+                          .replace(/[\s-]+/g, '_');
+                        const fallback = `/images/birds/${slug}.jpg`;
+                        if (!e.target.src.endsWith(fallback)) {
+                          e.target.src = fallback;
+                        }
+                      }}
+                    />
+                    {imageMeta && (
+                      <div
+                        style={{
+                          position: 'absolute',
+                          bottom: '0.75rem',
+                          left: '0.75rem',
+                          background: 'rgba(15, 23, 42, 0.85)',
+                          backdropFilter: 'blur(6px)',
+                          color: '#f8fafc',
+                          padding: '0.3rem 0.65rem',
+                          borderRadius: '9999px',
+                          fontSize: '0.75rem',
+                          fontWeight: 600,
+                          display: 'flex',
+                          alignItems: 'center',
+                          gap: '0.35rem',
+                        }}
+                      >
+                        <Sparkles size={12} color="#34d399" />
+                        <span>
+                          {imageMeta.provider.includes('gemini') ? 'Gemini AI Visual' : 'AI Generated Visual'}
+                        </span>
+                      </div>
+                    )}
+                  </div>
 
+                  <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginTop: '0.65rem' }}>
+                    <button
+                      onClick={handleGenerateImage}
+                      disabled={isGenerating}
+                      className="btn btn-secondary btn-sm"
+                      style={{ display: 'inline-flex', alignItems: 'center', gap: '0.4rem', fontSize: '0.8rem' }}
+                    >
+                      {isGenerating ? (
+                        <>
+                          <Loader2 size={13} className="animate-spin" />
+                          <span>Generating...</span>
+                        </>
+                      ) : (
+                        <>
+                          <RefreshCw size={13} />
+                          <span>{generatedImage ? 'Regenerate Visual' : 'Generate with Gemini'}</span>
+                        </>
+                      )}
+                    </button>
+                    {bird_info?.in_database && !generatedImage && (
+                      <span style={{ fontSize: '0.76rem', color: 'var(--slate-500)' }}>Catalog Photo</span>
+                    )}
+                  </div>
+                </div>
+              ) : (
+                <div
+                  style={{
+                    borderRadius: 'var(--radius-lg)',
+                    border: '2px dashed #cbd5e1',
+                    background: '#f8fafc',
+                    height: '260px',
+                    display: 'flex',
+                    flexDirection: 'column',
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                    padding: '1.5rem',
+                    textAlign: 'center',
+                  }}
+                >
+                  <Sparkles size={32} color="var(--primary-600)" style={{ marginBottom: '0.75rem' }} />
+                  <h4 style={{ fontSize: '0.95rem', fontWeight: 700, marginBottom: '0.25rem', color: 'var(--slate-800)' }}>
+                    No Photo in Local Catalog
+                  </h4>
+                  <p style={{ fontSize: '0.8rem', color: 'var(--slate-500)', marginBottom: '1rem', maxWidth: '220px' }}>
+                    Generate an authentic wildlife visual of this species using Gemini AI.
+                  </p>
+                  <button
+                    onClick={handleGenerateImage}
+                    disabled={isGenerating}
+                    className="btn btn-primary btn-sm"
+                    style={{ display: 'inline-flex', alignItems: 'center', gap: '0.4rem' }}
+                  >
+                    {isGenerating ? (
+                      <>
+                        <Loader2 size={14} className="animate-spin" />
+                        <span>Generating Visual...</span>
+                      </>
+                    ) : (
+                      <>
+                        <Sparkles size={14} />
+                        <span>Generate with Gemini</span>
+                      </>
+                    )}
+                  </button>
+                </div>
+              )}
+
+              {genError && (
+                <div style={{ marginTop: '0.5rem', fontSize: '0.78rem', color: '#b91c1c', background: '#fee2e2', padding: '0.4rem 0.6rem', borderRadius: 'var(--radius-sm)' }}>
+                  {genError}
+                </div>
+              )}
+
+              {imageMeta && imageMeta.gemini_status === 'permission_denied' && (
+                <div style={{ marginTop: '0.5rem', fontSize: '0.74rem', color: '#92400e', background: '#fef3c7', padding: '0.4rem 0.6rem', borderRadius: 'var(--radius-sm)' }}>
+                  Google Gemini reported project permission denied (403). Visual rendered via fallback AI engine.
+                </div>
+              )}
+            </div>
+
+            {/* Ecological / Species Details Column */}
             <div>
               <div style={{ display: 'flex', gap: '0.5rem', marginBottom: '0.75rem', flexWrap: 'wrap' }}>
-                <span className="badge badge-success">Family: {bird_info.family}</span>
-                <span className="badge badge-warning">Order: {bird_info.order}</span>
+                <span className="badge badge-success">
+                  Family: {bird_info?.family || 'Identified via BirdNET'}
+                </span>
+                {bird_info?.order && bird_info.order !== 'Uncataloged' && (
+                  <span className="badge badge-warning">Order: {bird_info.order}</span>
+                )}
                 <span className="badge" style={{ background: '#e0e7ff', color: '#3730a3' }}>
-                  {bird_info.conservation_status}
+                  {bird_info?.conservation_status || 'Bioacoustic Candidate'}
                 </span>
               </div>
 
               <p style={{ color: 'var(--slate-700)', fontSize: '0.95rem', lineHeight: 1.6, marginBottom: '1.25rem' }}>
-                {bird_info.description}
+                {bird_info?.description ||
+                  `Acoustically identified as ${bird_name} (${scientific_name}). This species is cataloged in the global Cornell BirdNET bioacoustic library with ${confidencePercent}% detection confidence.`}
               </p>
 
               <div style={{ display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: '0.75rem' }}>
@@ -142,20 +321,24 @@ export default function IdentificationResult({ result, onReset }) {
                   <div style={{ display: 'flex', alignItems: 'center', gap: '0.35rem', color: 'var(--primary-700)', fontWeight: 600, fontSize: '0.8rem', marginBottom: '0.2rem' }}>
                     <MapPin size={14} /> Habitat
                   </div>
-                  <div style={{ fontSize: '0.82rem', color: 'var(--slate-700)' }}>{bird_info.habitat}</div>
+                  <div style={{ fontSize: '0.82rem', color: 'var(--slate-700)' }}>
+                    {bird_info?.habitat || 'Global wild distribution'}
+                  </div>
                 </div>
 
                 <div style={{ background: 'var(--slate-50)', padding: '0.75rem', borderRadius: 'var(--radius-sm)' }}>
                   <div style={{ display: 'flex', alignItems: 'center', gap: '0.35rem', color: 'var(--primary-700)', fontWeight: 600, fontSize: '0.8rem', marginBottom: '0.2rem' }}>
                     <Utensils size={14} /> Diet
                   </div>
-                  <div style={{ fontSize: '0.82rem', color: 'var(--slate-700)' }}>{bird_info.diet}</div>
+                  <div style={{ fontSize: '0.82rem', color: 'var(--slate-700)' }}>
+                    {bird_info?.diet || 'Insects, seeds, or nectar'}
+                  </div>
                 </div>
               </div>
             </div>
           </div>
 
-          {bird_info.interesting_facts && bird_info.interesting_facts.length > 0 && (
+          {bird_info?.interesting_facts && bird_info.interesting_facts.length > 0 && (
             <div style={{ marginTop: '1.5rem', background: 'var(--primary-50)', padding: '1rem 1.25rem', borderRadius: 'var(--radius-md)', border: '1px solid var(--primary-100)' }}>
               <div style={{ display: 'flex', alignItems: 'center', gap: '0.4rem', color: 'var(--primary-800)', fontWeight: 700, fontSize: '0.88rem', marginBottom: '0.5rem' }}>
                 <Sparkles size={16} /> Interesting Facts

@@ -27,6 +27,7 @@ logger = logging.getLogger("birdnet_app")
 async def lifespan(app: FastAPI):
     """Application lifespan manager: preloads models and manages resources."""
     logger.info("Initializing AI Bird Sound Identification Service...")
+    settings.TMP_UPLOADS_DIR.mkdir(parents=True, exist_ok=True)
     try:
         from app.services.birdnet_service import get_analyzer
         get_analyzer()
@@ -49,6 +50,9 @@ allowed_origins = [
     settings.FRONTEND_ORIGIN,
     "http://localhost:5173",
     "http://127.0.0.1:5173",
+    "http://localhost:5174",
+    "http://127.0.0.1:5174",
+    "http://localhost:3000",
 ]
 # Remove duplicates
 allowed_origins = list(set(allowed_origins))
@@ -56,6 +60,7 @@ allowed_origins = list(set(allowed_origins))
 app.add_middleware(
     CORSMiddleware,
     allow_origins=allowed_origins,
+    allow_origin_regex=r"https?://(localhost|127\.0\.0\.1|192\.168\.\d+\.\d+)(:\d+)?",
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
@@ -148,5 +153,17 @@ app.include_router(identify_router)
 app.include_router(birds_router)
 app.include_router(history_router)
 app.include_router(statistics_router)
+
+# Mount Static Assets
+from fastapi.staticfiles import StaticFiles
+from pathlib import Path
+
+static_dir = Path(__file__).resolve().parent.parent / "static"
+if static_dir.exists():
+    app.mount("/static", StaticFiles(directory=str(static_dir)), name="static")
+    images_dir = static_dir / "images"
+    if images_dir.exists():
+        app.mount("/images", StaticFiles(directory=str(images_dir)), name="images")
+
 
 

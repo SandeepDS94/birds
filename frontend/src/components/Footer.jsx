@@ -5,10 +5,10 @@ export default function Footer() {
     <footer className="footer">
       <div className="container">
         <p>
-          <strong>AvianAI</strong> &copy; {new Date().getFullYear()} &mdash; AI-Based Bird Sound Identification &amp; Species Information System.
+          <strong>AvianAI</strong> &copy; {new Date().getFullYear()} &mdash;  Bird Sound Identification &amp; Species Information System.
         </p>
         <p style={{ marginTop: '0.35rem', fontSize: '0.8rem', color: '#64748b' }}>
-          Powered by Cornell Lab BirdNET &bull; Supabase PostgreSQL &bull; Fast and Private Local Inference
+          Powered by   || 2026
         </p>
       </div>
     </footer>

@@ -1,12 +1,26 @@
 import React, { useEffect, useState } from 'react';
 import { api } from '../services/api';
-import { Search, Info, MapPin, Utensils, Shield, Sparkles } from 'lucide-react';
+import { Search, Info, MapPin, Utensils, Shield, Sparkles, Loader2, RefreshCw } from 'lucide-react';
+
+const getBirdImageUrl = (bird) => {
+  if (!bird) return null;
+  if (bird.image_url && (bird.image_url.startsWith('/images/') || bird.image_url.startsWith('http'))) {
+    return bird.image_url;
+  }
+  if (bird.scientific_name) {
+    const slug = bird.scientific_name.toLowerCase().trim().replace(/[\s-]+/g, '_');
+    return `/images/birds/${slug}.jpg`;
+  }
+  return bird.image_url || null;
+};
 
 export default function BirdLibrary() {
   const [birds, setBirds] = useState([]);
   const [searchTerm, setSearchTerm] = useState('');
   const [selectedBird, setSelectedBird] = useState(null);
   const [loading, setLoading] = useState(true);
+  const [isGenerating, setIsGenerating] = useState(false);
+  const [genMessage, setGenMessage] = useState(null);
 
   useEffect(() => {
     async function loadBirds() {
@@ -23,6 +37,33 @@ export default function BirdLibrary() {
     }
     loadBirds();
   }, []);
+
+  const handleGenerateModalImage = async () => {
+    if (!selectedBird) return;
+    setIsGenerating(true);
+    setGenMessage(null);
+    try {
+      const res = await api.generateBirdImage({
+        commonName: selectedBird.common_name,
+        scientificName: selectedBird.scientific_name,
+      });
+      if (res?.success && res?.data?.image_url) {
+        const updatedImg = res.data.image_url;
+        setSelectedBird((prev) => ({ ...prev, image_url: updatedImg }));
+        setBirds((prev) =>
+          prev.map((b) =>
+            b.scientific_name === selectedBird.scientific_name ? { ...b, image_url: updatedImg } : b
+          )
+        );
+        const prov = res.data.provider.includes('gemini') ? 'Gemini AI' : 'AI engine';
+        setGenMessage(`Visual generated successfully via ${prov}.`);
+      }
+    } catch (err) {
+      setGenMessage(`Generation error: ${err.message}`);
+    } finally {
+      setIsGenerating(false);
+    }
+  };
 
   const filteredBirds = birds.filter((b) => {
     const term = searchTerm.toLowerCase();
@@ -68,13 +109,20 @@ export default function BirdLibrary() {
         <div className="grid-3">
           {filteredBirds.map((bird) => (
             <div key={bird.id || bird.scientific_name} className="card" style={{ padding: 0, overflow: 'hidden', display: 'flex', flexDirection: 'column' }}>
-              {bird.image_url ? (
-                <div style={{ width: '100%', height: '200px', overflow: 'hidden', background: '#e2e8f0' }}>
+              {getBirdImageUrl(bird) ? (
+                <div style={{ width: '100%', height: '200px', overflow: 'hidden', background: '#e2e8f0', position: 'relative' }}>
                   <img
-                    src={bird.image_url}
+                    src={getBirdImageUrl(bird)}
                     alt={bird.common_name}
+                    loading="lazy"
                     style={{ width: '100%', height: '100%', objectFit: 'cover', transition: 'transform 0.3s ease' }}
-                    onError={(e) => { e.target.style.display = 'none'; }}
+                    onError={(e) => {
+                      const slug = bird.scientific_name?.toLowerCase().trim().replace(/[\s-]+/g, '_');
+                      const fallback = `/images/birds/${slug}.jpg`;
+                      if (!e.target.src.endsWith(fallback)) {
+                        e.target.src = fallback;
+                      }
+                    }}
                   />
                 </div>
               ) : (
@@ -144,11 +192,18 @@ export default function BirdLibrary() {
               </button>
             </div>
 
-            {selectedBird.image_url && (
+            {getBirdImageUrl(selectedBird) && (
               <img
-                src={selectedBird.image_url}
+                src={getBirdImageUrl(selectedBird)}
                 alt={selectedBird.common_name}
                 style={{ width: '100%', maxHeight: '260px', objectFit: 'cover', borderRadius: 'var(--radius-md)', marginBottom: '1.25rem' }}
+                onError={(e) => {
+                  const slug = selectedBird.scientific_name?.toLowerCase().trim().replace(/[\s-]+/g, '_');
+                  const fallback = `/images/birds/${slug}.jpg`;
+                  if (!e.target.src.endsWith(fallback)) {
+                    e.target.src = fallback;
+                  }
+                }}
               />
             )}
 
@@ -185,8 +240,32 @@ export default function BirdLibrary() {
               </div>
             )}
 
-            <div style={{ textAlign: 'right' }}>
-              <button onClick={() => setSelectedBird(null)} className="btn btn-secondary">
+            {genMessage && (
+              <div style={{ marginBottom: '1rem', fontSize: '0.82rem', padding: '0.5rem 0.75rem', borderRadius: 'var(--radius-sm)', background: '#ecfdf5', color: '#065f46', border: '1px solid #a7f3d0' }}>
+                {genMessage}
+              </div>
+            )}
+
+            <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+              <button
+                onClick={handleGenerateModalImage}
+                disabled={isGenerating}
+                className="btn btn-secondary"
+                style={{ display: 'inline-flex', alignItems: 'center', gap: '0.4rem', fontSize: '0.85rem' }}
+              >
+                {isGenerating ? (
+                  <>
+                    <Loader2 size={14} className="animate-spin" />
+                    <span>Generating with Gemini...</span>
+                  </>
+                ) : (
+                  <>
+                    <Sparkles size={14} color="var(--primary-600)" />
+                    <span>Generate AI Visual</span>
+                  </>
+                )}
+              </button>
+              <button onClick={() => { setSelectedBird(null); setGenMessage(null); }} className="btn btn-secondary">
                 Close
               </button>
             </div>

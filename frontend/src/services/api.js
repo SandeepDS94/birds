@@ -99,4 +99,19 @@ export const api = {
   async getStatistics() {
     return apiRequest('/api/statistics');
   },
+
+  // AI Bird Image Generation
+  async generateBirdImage({ commonName, scientificName, customPrompt = '' }) {
+    return apiRequest('/api/birds/generate-image', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({
+        common_name: commonName,
+        scientific_name: scientificName,
+        custom_prompt: customPrompt,
+      }),
+    });
+  },
 };

@@ -123,9 +123,15 @@ def match_bird_info(
             if db_norm == norm_com or db_norm in norm_com or norm_com in db_norm:
                 matched = dict(bird)
                 matched["in_database"] = True
+                if not matched.get("image_url"):
+                    from app.services.image_generation_service import get_cached_image_url
+                    matched["image_url"] = get_cached_image_url(matched.get("common_name", ""), matched.get("scientific_name"))
                 return matched
 
     # 3. Transparent fallback when species is not present in local catalog
+    from app.services.image_generation_service import get_cached_image_url
+    cached_img = get_cached_image_url(common_name or "", scientific_name)
+
     return {
         "common_name": common_name or "Unknown Species",
         "scientific_name": scientific_name or "Unknown Taxonomy",
@@ -137,6 +143,6 @@ def match_bird_info(
         "distribution": "Information not available.",
         "conservation_status": "Information not available.",
         "interesting_facts": [],
-        "image_url": None,
+        "image_url": cached_img,
         "in_database": False,
     }
